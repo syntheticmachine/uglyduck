@@ -1,12 +1,10 @@
-<?php
-get_header();
-get_template_part( 'template-parts/content', 'hero' ); ?>
+<?php get_header(); ?>
 <main class="single__one">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2">
-				<span class="single__one-category">Design</span>
-				<h1 class="single__one-title">Essential Tools For Personal Home Landscaping.</h1>
+				<span class="single__one-category"><?php the_category(', ') ?></span>
+				<h1 class="single__one-title"><?php the_title(); ?></h1>
         <div class="row align-items-center">
           <div class="col-6">
             <div class="row align-items-center">
@@ -16,12 +14,12 @@ get_template_part( 'template-parts/content', 'hero' ); ?>
                 </div>
                 <div class="single__one-author">
                   <span class="written-by">Written By</span><br />
-                  <span class="name">Nick Campbell</span>
+                  <span class="name"><?php the_author(); ?></span>
                 </div>
               </div>
               <div class="col-md-auto">
-                <strong>January 12th, 2018</strong><br />
-                <span class="posted__in">Posted in <a href="#">Design</a></span>
+                <strong><?php the_time('F jS, Y') ?></strong><br />
+                <span class="posted__in">Posted in <a href="#"><?php the_category(', ') ?></a></span>
               </div>
             </div>
           </div>
@@ -33,36 +31,15 @@ get_template_part( 'template-parts/content', 'hero' ); ?>
         </div>
       </div>
       <div class="col-12">
-        <div class="single__one-featured" style="background-image: url(../../assets/images/blog-9.jpg);"></div>
+        <div class="single__one-featured" style="background-image: url(<?php echo $img[0]; ?>);"></div>
         <figure class="featured__image">
-          <img src="../../assets/images/blog-6.jpg" alt="Landscaping Supplies" />
-          <figcaption>Botanical Gardens - Trulli, Puglia, Italy.</figcaption>
+          <img src="<?php echo isset($img[0]) ? $img[0] : ''; ?>" alt="<?php echo isset($alt) ? $alt : ''; ?>" title="<?php echo isset($title) ? $title : ''; ?>" />
+          <figcaption><?php echo isset($caption) ? $caption : ''; ?></figcaption>
         </figure>
       </div>
       <div class="col-lg-8 offset-lg-2">
 				<div class="single__one-content">
-          <h2>The right tools for the job.</h2>
-					<p>
-						Before last month, you’d be hard-pressed to find the curiously shaped letters you’re asked to name from charts at your optometrist’s office in font lists in Word or Docs. But if you’re a <a href="#">typeface nerd</a> who also appreciates mathematical precision, the newly minted “Optician Sans” is the font for you.
-					</p>
-					<p>
-						<a href="#">Fast Company</a> spoke with the design firm ANTI Hamar, the creator of the font, about the neat typeface made available for free last month. The project began as a rebranding commission from the Norwegian family eyecare business Optician-K. According to Fast Company, the design firm used the history of optometry as a springboard for inspiration, leading them to the pioneering letter designs developed by Dutch eye doctor <a href="#">Hermann Snellen</a> in 1862 for his Snellen chart, which used mathematical precision to zero in on a patient’s visual acuity. Snellen did this by applying a 5 x 5 grid as the foundation for a total of 10 letters used in his tests.
-					</p>
-          <img src="../../assets/images/blog-7.jpg" />
-          <h3>Take Climate Action by Transforming Your Lawn with Seasonal Landscaping.</h3>
-					<p>
-						In 1959, those 10 letters were given a reboot by American ophthalmologist Louise Sloan. She overhauled the letters to exclude Snellen’s serifs—those little protruding details like in the “E” shown above—giving them a much cleaner and contemporary feel. Those were later for developed for the <a href="#">standardized Logarithm of the Minimum Angle of Resolution (LogMAR) tests</a> now used by eye care professionals across the globe.
-					</p>
-					<p>
-						ANTI Hamar aimed to revamp the Optician-K brand using Sloan’s designs, according to Fast Company, but there were only 10 to pull from—and only a single vowel. So they designed a comprehensive alphabet, with characters and numbers to boot, inspired by Snellen’s original 5 x 5 grid design.
-					</p>
-          <img src="../../assets/images/blog-4.jpg" />
-          <p>
-            In 1959, those 10 letters were given a reboot by American ophthalmologist Louise Sloan. She overhauled the letters to exclude Snellen’s serifs—those little protruding details like in the “E” shown above—giving them a much cleaner and contemporary feel. Those were later for developed for the <a href="#">standardized Logarithm of the Minimum Angle of Resolution (LogMAR) tests</a> now used by eye care professionals across the globe.
-          </p>
-          <p>
-            ANTI Hamar aimed to revamp the Optician-K brand using Sloan’s designs, according to Fast Company, but there were only 10 to pull from—and only a single vowel. So they designed a comprehensive alphabet, with characters and numbers to boot, inspired by Snellen’s original 5 x 5 grid design.
-          </p>
+          <?php the_content(); ?>
 				</div>
 			</div>
 		</div>
