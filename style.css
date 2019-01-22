@@ -21,6 +21,9 @@ a:hover {
   color: var(--secondary);
 	text-decoration: none;
 }
+.container {
+	max-width: 85%;
+}
 main {
 	padding: 5rem;
 }
