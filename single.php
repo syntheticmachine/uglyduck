@@ -1,5 +1,13 @@
 <?php get_header(); ?>
-<main class="single__one">
+<?php
+$thumbnail_id = get_post_thumbnail_id( $post->ID ); // Post Image ID
+$img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' ); // Image SRC
+$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); // The Alt Tag
+$title = get_post(get_post_thumbnail_id())->post_title; //The Title
+$caption = get_post(get_post_thumbnail_id())->post_excerpt; //The Caption
+$description = get_post(get_post_thumbnail_id())->post_content; // The Description
+?>
+<main class="single__one mt-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2">
@@ -49,13 +57,7 @@
 <style>
 /* Single One
 ----------------------------------------- */
-:root {
-  --primary: #21CB5A; /* Temporary to test CSS variables */
-  --secondary: #d2b589; /* Temporary to test CSS variables */
-}
-html, body {
-  font-family: 'Barlow', sans-serif;
-}
+
 h1, h2, h3, h4, h5 {
   font-weight: 600;
   margin-bottom: 1.5rem;
