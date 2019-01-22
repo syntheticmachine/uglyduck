@@ -7,9 +7,11 @@ $title = get_post(get_post_thumbnail_id())->post_title; //The Title
 $caption = get_post(get_post_thumbnail_id())->post_excerpt; //The Caption
 $description = get_post(get_post_thumbnail_id())->post_content; // The Description
 ?>
+
 <main class="single__one mt-5">
 	<div class="container">
 		<div class="row">
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="col-lg-8 offset-lg-2">
 				<span class="single__one-category"><?php the_category(', ') ?></span>
 				<h1 class="single__one-title"><?php the_title(); ?></h1>
@@ -50,6 +52,7 @@ $description = get_post(get_post_thumbnail_id())->post_content; // The Descripti
           <?php the_content(); ?>
 				</div>
 			</div>
+      <?php endwhile; endif; ?>
 		</div>
 	</div>
 </main>
