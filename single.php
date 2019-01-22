@@ -9,6 +9,7 @@ $description = get_post(get_post_thumbnail_id())->post_content; // The Descripti
 ?>
 
 <main class="single__one mt-5">
+  <br /><br /><br />
 	<div class="container">
 		<div class="row">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
