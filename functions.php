@@ -93,8 +93,18 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'udm-general-settings',
 	));
 	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer Options',
+		'menu_title'	=> 'Footer Options',
+		'parent_slug'	=> 'udm-general-settings',
+	));
+	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Hero Options',
 		'menu_title'	=> 'Hero Options',
+		'parent_slug'	=> 'udm-general-settings',
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Blog Options',
+		'menu_title'	=> 'Blog Options',
 		'parent_slug'	=> 'udm-general-settings',
 	));
 }
@@ -132,6 +142,10 @@ function create_widget( $name, $id, $description ) {
 create_widget( 'Empty Sidebar', 'empty_sidebar', 'This will hold the default WP widgets' );
 create_widget( 'Footer Section One', 'footer_one', 'Displays in the first section of the footer' );
 create_widget( 'Footer Section Two', 'footer_two', 'Displays in the second section of the footer' );
+create_widget( 'Footer Section Three', 'footer_three', 'Displays in the third section of the footer' );
+create_widget( 'Footer Section Four', 'footer_four', 'Displays in the fourth section of the footer' );
+create_widget( 'Footer Section Five', 'footer_five', 'Displays in the fifth section of the footer' );
+create_widget( 'Footer Section Six', 'footer_six', 'Displays in the sixth section of the footer' );
 
 // Enable Shortcodes In Widgets
 add_filter( 'widget_text', 'do_shortcode' );

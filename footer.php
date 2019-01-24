@@ -1,19 +1,10 @@
-<footer>
-	<div class="footer--main">
-		<div class="container hidden__mobile">
-			<div class="row">
-				<div class="col-md-6">
-				</div>
-				<div class="col-md-3">
-					<?php dynamic_sidebar( 'footer_one' ); ?>
-				</div>
-				<div class="col-md-3">
-					<?php dynamic_sidebar( 'footer_two' ); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
+<?php
+if(get_field('footer_template', 'option')) {
+	get_template_part( 'template-parts/footers/footer-' . get_field('footer_template', 'option'));
+} else {
+	get_template_part( 'template-parts/footers/footer-one');
+}
+?>
 <?php wp_footer(); ?>
 </body>
 </html>
