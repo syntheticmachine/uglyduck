@@ -1,3 +1,10 @@
+<?php
+$footerBackground = get_field('background_color', 'options');
+$textColor = get_field('text_color', 'options');
+$linkColor = get_field('link_color', 'options');
+$darkUI = get_field('dark_ui', 'options');
+?>
+
 <footer class="footer__one">
 	<div class="container">
 		<div class="row">
@@ -37,7 +44,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<p>© <?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?> <span>|</span>Created By <a href="https://uglyduckmarketing.com/" target="_blank">UDM</a></p>
+					<p>© <?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?><span>|</span>Created By <a href="https://uglyduckmarketing.com/" target="_blank">UDM</a></p>
 				</div>
 			</div>
 		</div>
@@ -63,7 +70,7 @@ footer ul li a {
 	color: var(--global-dark);
 	display: block;
 	padding-bottom: .75rem;
-	font-size: .935rem;
+	font-size: .865rem;
 }
 footer .widget__title {
   font-size: 1rem;
@@ -87,4 +94,14 @@ footer .company__info a {
 	font-weight: 600;
 	color: var(--primary);
 }
+</style>
+
+<style>
+<?php if($footerBackground) : ?> footer { background-color: <?php echo $footerBackground; ?> !important; } <?php endif; ?>
+<?php if($textColor) : ?> footer p { color: <?php echo $textColor; ?> !important; } <?php endif; ?>
+<?php if($linkColor) : ?> footer ul li a { color: <?php echo $linkColor; ?> !important; } <?php endif; ?>
+<?php if($darkUI) : ?>
+	footer .company__info { border-top: 1px solid rgba(255,255,255,.075) !important; }
+	footer .company__info span { color: rgba(255,255,255,.35) !important; }
+<?php endif; ?>
 </style>

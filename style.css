@@ -253,7 +253,7 @@ header.header__basic .social__icons {
 ------------------------------------- */
 
 .hero__basic {
-  position: absolute;
+  position: relative;
   width: 100%;
   background-color: white;
   border-top: 1px solid rgba(0,0,0,.1);
