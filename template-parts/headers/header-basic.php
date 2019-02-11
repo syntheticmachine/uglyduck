@@ -7,7 +7,7 @@ $headerLink = get_field('link_color',$headerID);
 $headerLinkHover = get_field('link_hover_color',$headerID);
 $headerWidgets = get_field('header_widgets', $headerID);
 $navLocation = get_field('nav_location', $headerID);
-if($navLocation) {$nav = 'right';} else { $nav = 'left'; }
+if($navLocation) {$nav = 'right';} else { $nav = 'left';}
 ?>
 <header class="d-none d-lg-block header__basic <?php foreach($headerClasses as $headerClass ): echo $headerClass . ' '; endforeach; ?>">
   <div class="container">

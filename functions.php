@@ -107,6 +107,11 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Blog Options',
 		'parent_slug'	=> 'udm-general-settings',
 	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Service Options',
+		'menu_title'	=> 'Service Options',
+		'parent_slug'	=> 'udm-general-settings',
+	));
 }
 
 // Add Header Code Field To <head> Tag
@@ -185,3 +190,17 @@ add_action( 'wp_enqueue_scripts', 'udm_enqueue' );
 //======================================================================
 
 require_once(dirname(__FILE__) . '/post-types.php');
+
+//======================================================================
+// DELETE THIS LATER - ONLY FOR TESTING
+//======================================================================
+
+add_action( 'admin_init', 'hide_editor' );
+function hide_editor() {
+  $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+  if( !isset( $post_id ) ) return;
+  $pagetitle = get_the_title($post_id);
+  if($pagetitle == 'Page Builder'){
+    remove_post_type_support('page', 'editor');
+  }
+}
