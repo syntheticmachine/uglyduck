@@ -29,3 +29,4 @@ small, h1, p {
 	width: 100%;
 }
 </style>
+<?php get_footer(); ?>

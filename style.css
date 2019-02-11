@@ -1,6 +1,8 @@
 /*
 Theme Name: uglyduck
-Version: 1.0.1
+Author: Ugly Duck Marketing
+Author URI: https://uglyduckmarketing.com/
+Version: 1.0.2
 */
 
 /* Development Notes
@@ -9,9 +11,8 @@ Version: 1.0.1
 - Mobile Header + Navigation
 - Footer Call To Action (2-3 Types)
 - Contact Template
-- Shortcodes For All Company Fields
-- Double Check Dropdowbn Styles
-- Service Template (Create Last - Figure Out Better Logic For How It Works)
+- Service Template (Create Last - Figure Out Better Logic For How It Works) ?
+- Add Components For Realtor Sites
 */
 
 /* Base Styles
@@ -69,10 +70,13 @@ main h1, main h2, main h3, main h4, main h5 {
 ------------------------------------- */
 
 header.header__basic {
-	position: absolute;
+	position: relative;
 	width: 100%;
 	background: white;
 	z-index: 9;
+}
+header.header__basic.transparent {
+	position: absolute;
 }
 header.header__basic .container {
   width: 100%;
@@ -117,6 +121,56 @@ header.header__basic nav ul li.current_page_item::after {
 }
 header.header__basic nav ul li:hover::after {
   width: 100%;
+}
+header.header__basic nav .menu-item-has-children a::after {
+  content: "\f3d0";
+  font-family: "Ionicons";
+  vertical-align: middle;
+  padding-left: 12px;
+  display: inline-block;
+  opacity: .5;
+  font-size: 10px;
+}
+header.header__basic nav ul.sub-menu li a::after, header.header__two nav ul.sub-menu li a::before {
+  display: none;
+}
+header.header__basic nav ul.sub-menu {
+  position: absolute;
+  border: 1px solid rgba(0,0,0,.1);
+  border-top: none;
+  background-color: white; /* Change through CSS variable */
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: all .3s ease;
+}
+header.header__basic nav ul li.menu-item-has-children:hover > .sub-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(3px);
+}
+header.header__basic nav ul.sub-menu li {
+  display: block;
+}
+header.header__basic nav ul.sub-menu li a {
+  padding: 1rem 4rem;
+  padding-left: 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+	display: block;
+}
+header.header__basic.transparent nav ul.sub-menu li a {
+	color: #353535 !important;
+	text-align: left;
+}
+header.header__basic nav ul.sub-menu li a:hover {
+	color: var(--primary) !important;
+}
+header.header__basic nav ul.sub-menu li::after {
+	display: none;
+}
+header.header__basic nav ul.sub-menu li:last-of-type a {
+  border: none;
 }
 header.header__basic .top__widget {
 	display: inline-block;
@@ -165,7 +219,7 @@ header.header__two {
   top: 0;
   left: 0;
   z-index: 4;
-  position: absolute;
+  position: relative;
 }
 header.header__two .header__two-top {
 	padding: 1.25rem 0;
@@ -311,7 +365,6 @@ header.header__two .social__icons {
   background-color: white;
   border-top: 1px solid rgba(0,0,0,.1);
   padding: 20px 0;
-	margin-bottom: 5rem;
 }
 .hero__basic h1 {
   padding: 1rem;
@@ -325,7 +378,7 @@ header.header__two .social__icons {
 ------------------------------------- */
 
 .hero__one {
-	height: 80vh;
+	min-height: 70vh;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
@@ -416,6 +469,54 @@ select {
 }
 label {
 	font-size: .9rem;
+}
+
+/* Footer One
+------------------------------------- */
+footer.footer__one {
+	padding: 3.5rem 0;
+	padding-bottom: 0;
+	border-top: 1px solid rgba(0,0,0,.05);
+}
+footer.footer__one img {
+  max-height: 75px;
+}
+footer.footer__one ul {
+	padding: 0;
+}
+footer.footer__one ul li {
+	list-style: none;
+}
+footer.footer__one ul li a {
+	color: var(--global-dark);
+	display: block;
+	padding-bottom: .75rem;
+	font-size: .865rem;
+}
+footer.footer__one .widget__title {
+  font-size: 1rem;
+  color: var(--primary);
+}
+footer.footer__one .company__info {
+	border-top: 1px solid rgba(0,0,0,.05);
+	padding: .75rem 0;
+	font-size: .75rem;
+	margin-top: 2.5rem;
+}
+footer.footer__one .company__info p {
+	margin-bottom: 0;
+}
+footer.footer__one .company__info span {
+	display: inline-block;
+	margin: 0 .35rem;
+	color: rgba(0,0,0,.165);
+}
+footer.footer__one .company__info a {
+	font-weight: 600;
+	color: var(--primary);
+}
+footer.footer__one .footer__block {
+	margin-bottom: 3rem;
 }
 
 /* Blog One
@@ -712,7 +813,13 @@ label {
 	main {
 	  padding: 3.5rem 0;
 	}
+	.hero__one {
+		padding: 3rem 0;
+	}
 	.hero__one .contents {
 		max-width: 100%;
+	}
+	.hero__one .contents h1 {
+		font-size: 2.5rem;
 	}
 }

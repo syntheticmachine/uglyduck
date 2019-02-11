@@ -27,8 +27,10 @@ $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 560
 <script>
 jQuery(document).ready(function($) {
 
-	var $headerHeight = $('header').height();
-	$('.hero__one .contents').css('padding-top', $headerHeight);
+	if($('header').hasClass('transparent')) {
+		var $headerHeight = $('header').height();
+		$('.hero__one .contents').css('padding-top', $headerHeight);
+	}
 
 	window.sr = ScrollReveal({ reset: false, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
 	sr.reveal('.hero__one-image', {

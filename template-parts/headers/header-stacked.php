@@ -16,7 +16,9 @@ if($navLocation) {$nav = 'right';} else { $nav = 'left';}
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-auto col-6 logo">
-					<img src="<?php echo $headerLogo; ?>" alt="Back To Homepage" />
+					<a href="<?php bloginfo('url'); ?>">
+						<img src="<?php echo $headerLogo; ?>" alt="Back To Homepage" />
+					</a>
 				</div>
 				<div class="col d-none d-lg-block">
 					<div class="row align-items-center justify-content-end">

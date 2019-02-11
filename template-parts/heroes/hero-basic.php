@@ -17,10 +17,3 @@ $textColor = get_field('text_color', $heroID);
 <?php if($heroBackground) : ?> .hero__basic { background-color: <?php echo $heroBackground; ?> !important; } <?php endif; ?>
 <?php if($textColor) : ?> .hero__basic h1 { color: <?php echo $textColor; ?> !important; } <?php endif; ?>
 </style>
-
-<script>
-jQuery(document).ready(function($) {
-	$headerOffset = $('header').height();
-	$('.hero__basic').css('top', $headerOffset);
-});
-</script>

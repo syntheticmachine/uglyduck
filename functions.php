@@ -168,6 +168,30 @@ function php_execute($html){
 add_filter('widget_text','php_execute',100);
 
 //======================================================================
+// CREATE SHORTCODES FROM ALL COMPANY FIELDS
+//======================================================================
+
+function company_name(){
+	return get_field('company_name', 'options');
+}
+add_shortcode( 'company_name', 'company_name' );
+
+function license_number(){
+	return get_field('license_number', 'options');
+}
+add_shortcode( 'license_number', 'license_number' );
+
+function phone_number(){
+	return get_field('phone_number', 'options');
+}
+add_shortcode( 'phone_number', 'phone_number' );
+
+function email_address(){
+	return get_field('email_address', 'options');
+}
+add_shortcode( 'email_address', 'email_address' );
+
+//======================================================================
 // ENQUEUE SCRIPTS & STYLES
 //======================================================================
 
