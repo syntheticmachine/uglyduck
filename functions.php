@@ -98,6 +98,11 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'udm-general-settings',
 	));
 	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer CTA Options',
+		'menu_title'	=> 'Footer CTA Options',
+		'parent_slug'	=> 'udm-general-settings',
+	));
+	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Hero Options',
 		'menu_title'	=> 'Hero Options',
 		'parent_slug'	=> 'udm-general-settings',

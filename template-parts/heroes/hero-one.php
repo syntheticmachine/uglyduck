@@ -5,7 +5,6 @@ $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 560
 ?>
 
 <div class="hero__one d-flex align-items-center">
-	<div class="hero__one-overlay"></div>
 	<div class="hero__one-image load-hidden" style="background-image: url(<?php echo $img[0]; ?>)"></div>
 	<div class="container">
 		<div class="row">

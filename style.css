@@ -2,13 +2,12 @@
 Theme Name: uglyduck
 Author: Ugly Duck Marketing
 Author URI: https://uglyduckmarketing.com/
-Version: 1.0.2
+Version: 1.0.3
 */
 
 /* Development Notes
 -------------------------------------
 // Items Needed:
-- Mobile Header + Navigation
 - Footer Call To Action (2-3 Types)
 - Contact Template
 - Service Template (Create Last - Figure Out Better Logic For How It Works) ?
@@ -37,7 +36,7 @@ a:hover {
 	max-width: 85%;
 }
 main {
-	padding: 5rem;
+	padding: 3.5rem 0;
 }
 main img {
 	max-width: 100%;
@@ -214,7 +213,7 @@ header.header__basic .social__icons {
 ------------------------------------- */
 
 header.header__two {
-  background-color: #FFFFFF; /* Change through CSS variable */
+  background-color: #FFFFFF;
   width: 100%;
   top: 0;
   left: 0;
@@ -242,14 +241,15 @@ header.header__two nav ul li {
 	list-style: none;
 	display: inline-block;
 }
-header.header__two nav ul li a {
+header.header__two nav ul > li a {
   color: #101010;
-  padding: 1.3rem 1.45rem;
+  padding: 1.15rem 1.45rem;
   font-weight: 500;
   font-size: 15px;
-	transition: all .3s ease;
-	display: inline-block;
-	position: relative;
+  transition: all .3s ease;
+  display: inline-block;
+  position: relative;
+  line-height: 1;
 }
 header.header__two nav ul li a::before {
   content: '';
@@ -280,7 +280,7 @@ header.header__two nav ul.sub-menu {
   position: absolute;
   border: 1px solid rgba(0,0,0,.1);
   border-top: none;
-  background-color: white; /* Change through CSS variable */
+  background-color: white;
   padding: 0;
   opacity: 0;
   pointer-events: none;
@@ -300,6 +300,11 @@ header.header__two nav ul.sub-menu li a {
   padding-left: 1.25rem;
   border-bottom: 1px solid rgba(0,0,0,.1);
 	display: block;
+	color: #101010;
+	text-align: left;
+}
+header.header__two nav ul.sub-menu li a:hover {
+	color: var(--primary);
 }
 header.header__two nav ul.sub-menu li:last-of-type a {
   border: none;
@@ -312,7 +317,7 @@ header.header__two .logo, header.header__two .logo a, .header__two-menu {
 	padding: 0;
 }
 header.header__two .logo img {
-  max-height: 55px;
+  max-height: 50px;
 }
 header.header__two .top__widget {
 	display: inline-block;
@@ -361,14 +366,13 @@ header.header__two .social__icons {
 
 .hero__basic {
   position: relative;
+	display: block;
   width: 100%;
   background-color: white;
-  border-top: 1px solid rgba(0,0,0,.1);
   padding: 20px 0;
 }
 .hero__basic h1 {
-  padding: 1rem;
-  padding-top: .75rem;
+  padding: 1rem 0;
   margin: 0;
   font-size: 1.65rem;
   line-height: 1;
@@ -382,16 +386,7 @@ header.header__two .social__icons {
 	width: 100%;
 	position: relative;
 	overflow: hidden;
-}
-.hero__one-overlay {
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background: #000000;
-	opacity: .5;
-	z-index: 2;
+	background-color: #101010;
 }
 .hero__one-image {
 	position: absolute;
@@ -402,6 +397,7 @@ header.header__two .social__icons {
 	background-size: cover;
 	background-position: center;
 	z-index: 1;
+	filter: brightness(50%);
 }
 .hero__one .contents {
   max-width: 50%;
@@ -444,7 +440,12 @@ header.header__two .social__icons {
 input[type="text"], input[type="email"], input[type="tel"], textarea {
   padding: .85rem;
   font-size: 16px;
-	border: 1px solid #dfdfdf;
+	border: 1px solid #d2d2d2;
+	outline: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 0;
 }
 input[type="button"] {
   border: none;
@@ -452,11 +453,15 @@ input[type="button"] {
   color: white;
   background: var(--primary);
   padding: 1rem 2rem;
+	outline: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
 }
 select {
   padding: .85rem;
   border-radius: 0;
-  border: 1px solid #dfdfdf;
+  border: 1px solid #d2d2d2;
   background: transparent;
 	background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23404040%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E%0A);
   background-position: right 20px center;
@@ -523,7 +528,6 @@ footer.footer__one .footer__block {
 ------------------------------------- */
 .blog main {
 	padding: 3.5rem 0;
-	padding-top: 9rem;
 }
 .blog__one-card {
 	margin-bottom: 2.5rem;
@@ -675,8 +679,8 @@ footer.footer__one .footer__block {
   margin-bottom: 1.5rem;
 }
 .single main {
-	padding: 4.5rem 0;
-  padding-top: 6rem;
+	padding: 0;
+	padding-bottom: 4.5rem;
 }
 .single__one-category {
 	color: var(--primary);
@@ -809,17 +813,36 @@ footer.footer__one .footer__block {
 @media(max-width: 992px) {
 	body {
   	font-size: 1.15rem;
+		padding-top: 60px;
 	}
 	main {
 	  padding: 3.5rem 0;
 	}
+	footer .container {
+		padding: 0;
+	}
+	.hero__basic {
+		padding: 8px 0;
+	}
+	.hero__basic .container {
+		padding: 0;
+	}
+	.hero__basic h1 {
+		font-size: 1.35rem;
+	}
 	.hero__one {
-		padding: 3rem 0;
+	  padding: 4rem 0;
+	  min-height: auto;
 	}
 	.hero__one .contents {
 		max-width: 100%;
 	}
 	.hero__one .contents h1 {
-		font-size: 2.5rem;
+	  font-size: 2.25rem;
+	  max-width: 90%;
+	}
+	.hero__one .contents .description {
+	  font-size: 1.25rem;
+	  line-height: 1.5;
 	}
 }

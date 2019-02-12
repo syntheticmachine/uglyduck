@@ -5,6 +5,9 @@ $headerClasses = get_field('header_classes',$headerID);
 $headerBackground = get_field('background_color',$headerID);
 $headerLink = get_field('link_color',$headerID);
 $headerLinkHover = get_field('link_hover_color',$headerID);
+$submenuBackground = get_field('submenu_background_color', $headerID);
+$submenuLink = get_field('submenu_link_color', $headerID);
+$submenuLinkHover = get_field('submenu_link_hover_color', $headerID);
 $headerWidgets = get_field('header_widgets', $headerID);
 $navLocation = get_field('nav_location', $headerID);
 if($navLocation) {$nav = 'right';} else { $nav = 'left';}
@@ -31,4 +34,7 @@ if($navLocation) {$nav = 'right';} else { $nav = 'left';}
 <?php if($headerBackground) : ?> header { background: <?php echo $headerBackground; ?> !important; } <?php endif; ?>
 <?php if($headerLink) : ?> header nav li a { color: <?php echo $headerLink; ?> !important; } <?php endif; ?>
 <?php if($headerLinkHover) : ?> header nav li a:hover { color: <?php echo $headerLinkHover; ?> !important; } <?php endif; ?>
+<?php if($submenuBackground) : ?> header.header__two .sub-menu { background: <?php echo $submenuBackground; ?> !important; } <?php endif; ?>
+<?php if($submenuLink) : ?> header.header__two .sub-menu li a { color: <?php echo $submenuLink; ?> !important; } <?php endif; ?>
+<?php if($submenuLinkHover) : ?> header.header__two .sub-menu li a:hover { color: <?php echo $submenuLinkHover; ?> !important; } <?php endif; ?>
 </style>
