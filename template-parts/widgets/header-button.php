@@ -1,7 +1,7 @@
 <?php if(get_field('header_override')) { $headerID = get_field('header_override'); } else { $headerID = get_field('default_header','options'); } ?>
 <div class="top__widget">
 	<a
-	href="<?php the_field('header_link', $headerID); ?>"
+	href="<?php the_field('button_link', $headerID); ?>"
 	class="btn cta__btn"
 	style="background-color: <?php the_field('button_color', $headerID); ?>;"
 	>
