@@ -10,8 +10,7 @@ Version: 1.0.3
 // Items Needed:
 - Footer Call To Action (2-3 Types)
 - Contact Template
-- Service Template (Create Last - Figure Out Better Logic For How It Works) ?
-- Add Components For Realtor Sites
+- Form Page
 */
 
 /* Base Styles
@@ -424,13 +423,12 @@ header.header__two .social__icons {
 }
 .hero__one .contents .description {
   color: rgba(255,255,255,.8);
-  font-size: 1.3rem;
-  line-height: 1.65;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 /* Inputs
 ------------------------------------- */
-
 .nf-form-cont {
 	width: 100%;
 }
@@ -522,6 +520,64 @@ footer.footer__one .company__info a {
 }
 footer.footer__one .footer__block {
 	margin-bottom: 3rem;
+}
+
+/* Footer CTA - One
+------------------------------------- */
+.footer__cta-one {
+	background-color: #101010;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	min-height: 300px;
+}
+.footer__cta-one-content {
+	top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+	z-index: 2;
+	max-width: 50%;
+}
+.footer__cta-one-content.centered {
+	text-align: center;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	max-width: 40%;
+}
+.footer__cta-one-img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	filter: brightness(65%);
+	background-size: cover;
+	background-position: center;
+	display: none;
+}
+.footer__cta-one h2 {
+	display: block;
+	font-weight: 600;
+	color: white;
+	font-size: 2.45rem;
+}
+.footer__cta-one p {
+	display: block;
+	color: rgba(255,255,255,.90);
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+.footer__cta-one .btn {
+	background: var(--primary);
+  color: white;
+  border-radius: 3px;
+  padding: 12px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+	margin-top: 1.25rem;
+	display: inline-block;
 }
 
 /* Blog One
@@ -807,6 +863,135 @@ footer.footer__one .footer__block {
 	}
 }
 
+/* Mobile Navigation - One
+----------------------------------------- */
+.mobile__header-one {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: white;
+	padding: .75rem 0;
+	z-index: 5;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	max-height: 61px;
+	overflow: hidden;
+}
+.mobile__header-one i {
+	font-size: 2rem;
+	line-height: 1;
+}
+.mobile__logo img {
+	max-height: 35px;
+}
+.mobile__header-one .container {
+	max-width: 100%;
+	padding: 0 1.5rem;
+}
+.mobile__navigation__one {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: white;
+  z-index: 7;
+  top: 60px;
+	right: 0%;
+	overflow: scroll;
+	padding: 0;
+	background: #f9f9f9;
+	opacity: 0;
+	pointer-events: none;
+}
+.mobile__navigation__one-visible {
+  right: 0px;
+  opacity: 1;
+	pointer-events: auto;
+}
+.mobile__navigation__one ul {
+	padding: 0;
+}
+.mobile__navigation__one li {
+  display: block;
+  width: 100%;
+}
+.mobile__navigation__one li a {
+  display: block;
+  width: 100%;
+  padding: 19px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  font-size: 14px;
+  color: #212944;
+  background: white;
+  font-weight: 600;
+  position: relative;
+}
+.mobile__navigation__one .menu-item-has-children a::after {
+  content: "\f30f";
+  font-family: "Ionicons";
+  vertical-align: middle;
+  padding-left: 14px;
+  display: inline-block;
+  margin-right: -10px;
+  font-size: 18px;
+  opacity: 1;
+  float: right;
+  background: transparent;
+  color: #000 !important;
+  text-align: center;
+  padding: 16px 14px;
+  position: absolute;
+  height: 100%;
+  top: 1px;
+  right: 11px;
+  width: 63px;
+  border-left: 1px solid rgba(0,0,0,.1);
+}
+.mobile__navigation__one .sub-menu a::after {
+	display: none;
+}
+.mobile__navigation__one .sub-menu {
+  padding-left: 0px;
+  background: white;
+  position: fixed;
+  top: 61px;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+	right: -100%;
+	transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.mobile__navigation__one .visible__sub {
+	right: 0 !important;
+}
+.mobile__navigation__one .mobile__title a {
+	background: var(--primary) !important;
+	border-bottom: none;
+	color: white !important;
+	padding-left: 85px !important;
+	font-size: 18px !important;
+}
+.mobile__navigation__one .mobile__title a::before {
+  content: "\f2ca";
+  font-family: "Ionicons";
+  vertical-align: middle;
+  padding-left: 14px;
+  transform: translateY(-1px);
+  display: inline-block;
+  margin-right: -10px;
+  font-size: 22px;
+  opacity: 1;
+  float: right;
+  background: rgba(0,0,0,.1);
+  color: white !important;
+  text-align: center;
+  padding: 17px 14px;
+  position: absolute;
+  height: 100%;
+  top: 1px;
+  left: 0;
+  width: 63px;
+}
+
 /* Media Queries
 ------------------------------------- */
 
@@ -823,9 +1008,6 @@ footer.footer__one .footer__block {
 	}
 	.hero__basic {
 		padding: 8px 0;
-	}
-	.hero__basic .container {
-		padding: 0;
 	}
 	.hero__basic h1 {
 		font-size: 1.35rem;
@@ -844,5 +1026,17 @@ footer.footer__one .footer__block {
 	.hero__one .contents .description {
 	  font-size: 1.25rem;
 	  line-height: 1.5;
+	}
+	.footer__cta-one {
+		height: auto;
+		padding: 4.5rem 0;
+	}
+	.footer__cta-one-content {
+		position: relative;
+		transform: none;
+		max-width: 85%;
+	}
+	.footer__cta-one h2 {
+		font-size: 2.15rem;
 	}
 }

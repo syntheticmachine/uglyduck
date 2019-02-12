@@ -108,13 +108,13 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'udm-general-settings',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Blog Options',
-		'menu_title'	=> 'Blog Options',
+		'page_title' 	=> 'Mobile Options',
+		'menu_title'	=> 'Mobile Options',
 		'parent_slug'	=> 'udm-general-settings',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Service Options',
-		'menu_title'	=> 'Service Options',
+		'page_title' 	=> 'Blog Options',
+		'menu_title'	=> 'Blog Options',
 		'parent_slug'	=> 'udm-general-settings',
 	));
 }
