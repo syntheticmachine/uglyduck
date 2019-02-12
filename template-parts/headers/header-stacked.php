@@ -20,14 +20,18 @@ if($navLocation) {$nav = 'right';} else { $nav = 'left';}
 			<div class="row align-items-center">
 				<div class="col-lg-auto col-6 logo">
 					<a href="<?php bloginfo('url'); ?>">
-						<img src="<?php echo $headerLogo; ?>" alt="Back To Homepage" />
+						<?php if($headerLogo) : ?>
+	            <img src="<?php echo $headerLogo; ?>" alt="Back To Homepage" />
+	          <?php endif; ?>
 					</a>
 				</div>
-				<div class="col d-none d-lg-block">
-					<div class="row align-items-center justify-content-end">
-            <?php foreach($headerWidgets as $headerWidget ): get_template_part( 'template-parts/widgets/header', $headerWidget ); endforeach; ?>
+				<?php if($headerWidgets) : ?>
+					<div class="col d-none d-lg-block">
+						<div class="row align-items-center justify-content-end">
+	            <?php foreach($headerWidgets as $headerWidget ): get_template_part( 'template-parts/widgets/header', $headerWidget ); endforeach; ?>
+						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

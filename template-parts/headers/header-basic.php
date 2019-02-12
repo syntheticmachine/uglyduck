@@ -17,15 +17,19 @@ if($navLocation) {$nav = 'right';} else { $nav = 'left';}
     <div class="row align-items-center">
       <div class="col-md-auto logo">
         <a href="<?php bloginfo('url'); ?>">
-          <img src="<?php echo $headerLogo; ?>" alt="Back To Homepage" />
+          <?php if($headerLogo) : ?>
+            <img src="<?php echo $headerLogo; ?>" alt="Back To Homepage" />
+          <?php endif; ?>
         </a>
       </div>
       <div class="col text-<?php echo $nav; ?>">
         <nav><?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?></nav>
       </div>
+      <?php if($headerWidgets) : ?>
       <div class="col-md-auto">
         <?php foreach($headerWidgets as $headerWidget ): get_template_part( 'template-parts/widgets/header', $headerWidget ); endforeach; ?>
       </div>
+      <?php endif; ?>
     </div>
   </div>
 </header>
