@@ -7,7 +7,12 @@ get_template_part( 'template-parts/content', 'hero' );
 <main>
 	<div class="container">
 		<div class="row">
-			<h1>Test Contact Template</h1>
+			<div class="col-md-6">
+				Test One
+			</div>
+			<div class="col-md-6">
+				Test Two
+			</div>
 		</div>
 	</div>
 </main>
