@@ -219,6 +219,7 @@ add_action( 'wp_enqueue_scripts', 'udm_enqueue' );
 //======================================================================
 
 require_once(dirname(__FILE__) . '/field-groups.php');
+require_once(dirname(__FILE__) . '/post-types.php');
 
 //======================================================================
 // DELETE THIS LATER - ONLY FOR TESTING
