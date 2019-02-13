@@ -370,6 +370,9 @@ header.header__two .social__icons {
   background-color: white;
   padding: 20px 0;
 }
+.hero__basic .container {
+	max-width: 90%;
+}
 .hero__basic h1 {
   padding: 1rem 0;
   margin: 0;
