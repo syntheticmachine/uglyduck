@@ -1034,7 +1034,10 @@ footer.footer__one .footer__block {
 	.footer__cta-one-content {
 		position: relative;
 		transform: none;
-		max-width: 85%;
+		max-width: 90%;
+	}
+	.footer__cta-one-content.centered {
+		max-width: 90%;
 	}
 	.footer__cta-one h2 {
 		font-size: 2.15rem;
