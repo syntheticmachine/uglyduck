@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 <main>
-	<!-- Silence is golden. -->
+	<!-- Silence is golden -->
 </main>
 <?php get_footer(); ?>
