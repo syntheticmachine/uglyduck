@@ -119,6 +119,9 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+// Hide ACF
+// add_filter('acf/settings/show_admin', '__return_false');
+
 // Add Header Code Field To <head> Tag
 function header_code() {
 the_field('header_code','options'); ?>
