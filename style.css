@@ -384,7 +384,7 @@ header.header__two .social__icons {
 ------------------------------------- */
 
 .hero__one {
-	min-height: 70vh;
+	min-height: 60vh;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
