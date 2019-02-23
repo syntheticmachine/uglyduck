@@ -68,7 +68,6 @@ add_filter('upload_mimes', 'cc_mime_types');
 // OPTIONS PAGE
 //======================================================================
 
-// Create UDM Options Page
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
 		'page_title' 	=> 'Base Settings',
@@ -115,6 +114,11 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Blog Options',
 		'menu_title'	=> 'Blog Options',
+		'parent_slug'	=> 'udm-general-settings',
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Industry Options',
+		'menu_title'	=> 'Industry Options',
 		'parent_slug'	=> 'udm-general-settings',
 	));
 }
@@ -221,5 +225,14 @@ add_action( 'wp_enqueue_scripts', 'udm_enqueue' );
 // LOAD FILES
 //======================================================================
 
-require_once(dirname(__FILE__) . '/field-groups.php');
-require_once(dirname(__FILE__) . '/post-types.php');
+require_once(dirname(__FILE__) . '/post-types.php'); // Post Types
+
+require_once(dirname(__FILE__) . '/field-groups.php'); // Field Groups
+
+if(!get_field('realtor_widgets', 'options')) :
+	function remove_realtor_widgets() {
+	  remove_menu_page( 'edit.php?post_type=agent' );
+		remove_menu_page( 'edit.php?post_type=listing' );
+	}
+	add_action( 'admin_menu', 'remove_realtor_widgets' );
+endif;
