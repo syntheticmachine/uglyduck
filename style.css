@@ -57,6 +57,8 @@ main p {
   font-size: 1.25rem;
   line-height: 1.5;
   color: var(--gray-dark);
+	display: block;
+	width: 100%;
 }
 main strong {
 	color: var(--dark);
