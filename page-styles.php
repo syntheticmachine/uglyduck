@@ -31,9 +31,9 @@
 		      <div class="main-heading"><h1>Blockquotes</h1></div>
 		      <div>
 		        <blockquote>
-		          <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-		          <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-		          <cite><a href="#!">Said no one, ever.</a></cite>
+		          <p>A block quotation <i>(also known as a long quotation or extract)</i> is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+		          <p>It is typically <strong>distinguished visually</strong> using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+		          <cite>Said no one, ever.</cite>
 		        </blockquote>
 		      </div>
 
