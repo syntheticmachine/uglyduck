@@ -117,8 +117,8 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'udm-general-settings',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Industry Options',
-		'menu_title'	=> 'Industry Options',
+		'page_title' 	=> 'Additional Options',
+		'menu_title'	=> 'Additional Options',
 		'parent_slug'	=> 'udm-general-settings',
 	));
 }
@@ -235,4 +235,11 @@ if(!get_field('realtor_widgets', 'options')) :
 		remove_menu_page( 'edit.php?post_type=listing' );
 	}
 	add_action( 'admin_menu', 'remove_realtor_widgets' );
+endif;
+
+if(!get_field('testimonials_widgets', 'options')) :
+	function remove_testimonial_widgets() {
+	  remove_menu_page( 'edit.php?post_type=testimonials' );
+	}
+	add_action( 'admin_menu', 'remove_testimonial_widgets' );
 endif;

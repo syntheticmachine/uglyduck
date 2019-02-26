@@ -2,6 +2,68 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
+	'key' => 'group_5c7089443e3b6',
+	'title' => 'Additional Options',
+	'fields' => array(
+		array(
+			'key' => 'field_5c70894e645c0',
+			'label' => 'Realtor Widgets',
+			'name' => 'realtor_widgets',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => 'On',
+			'ui_off_text' => 'Off',
+		),
+		array(
+			'key' => 'field_5c7484d1609d5',
+			'label' => 'Testimonials',
+			'name' => 'testimonials_widgets',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => 'On',
+			'ui_off_text' => 'Off',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'acf-options-additional-options',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
+acf_add_local_field_group(array(
 	'key' => 'group_5c52125b33574',
 	'title' => 'Agent Information',
 	'fields' => array(
@@ -1888,49 +1950,6 @@ acf_add_local_field_group(array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-hero-options',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
-));
-
-acf_add_local_field_group(array(
-	'key' => 'group_5c7089443e3b6',
-	'title' => 'Industry Options',
-	'fields' => array(
-		array(
-			'key' => 'field_5c70894e645c0',
-			'label' => 'Realtor Widgets',
-			'name' => 'realtor_widgets',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => 'On',
-			'ui_off_text' => 'Off',
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'options_page',
-				'operator' => '==',
-				'value' => 'acf-options-industry-options',
 			),
 		),
 	),
