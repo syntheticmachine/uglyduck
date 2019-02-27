@@ -305,7 +305,7 @@ header.header__two nav ul li {
 }
 header.header__two nav ul > li a {
   color: #101010;
-  padding: 1.15rem 0;
+  padding: 1.15rem 1rem;
   font-weight: 500;
   font-size: 15px;
   transition: all .3s ease;
