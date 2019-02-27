@@ -228,7 +228,7 @@ header.header__basic.transparent nav ul.sub-menu li a {
 	text-align: left;
 }
 header.header__basic nav ul.sub-menu li a:hover {
-	color: var(--primary) !important;
+	color: var(--primary);
 }
 header.header__basic nav ul.sub-menu li::after {
 	display: none;

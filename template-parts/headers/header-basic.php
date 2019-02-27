@@ -40,5 +40,7 @@ if($navLocation) {$nav = 'right';} else { $nav = 'left';}
 <?php if($headerLinkHover) : ?> header nav li a:hover { color: <?php echo $headerLinkHover; ?> !important; } <?php endif; ?>
 <?php if($submenuBackground) : ?> header.header__basic .sub-menu { background: <?php echo $submenuBackground; ?> !important; } <?php endif; ?>
 <?php if($submenuLink) : ?> header.header__basic .sub-menu li a { color: <?php echo $submenuLink; ?> !important; } <?php endif; ?>
-<?php if($submenuLinkHover) : ?> header.header__basic .sub-menu li a:hover { color: <?php echo $submenuLinkHover; ?> !important; } <?php endif; ?>
+<?php if($submenuLinkHover) : ?> header.header__basic .sub-menu li a:hover { color: <?php echo $submenuLinkHover; ?> !important; }
+<?php else : ?>header.header__basic .sub-menu li a:hover { color: var(--primary) !important; } <?php endif; ?>
+
 </style>
