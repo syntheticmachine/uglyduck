@@ -145,7 +145,7 @@ jQuery(document).ready(function($) {
 	transition: all .3s ease;
 }
 .faqs__one .faq__question:hover, .faqs__clicked {
-	background: var(--primary);
+	background: var(--primary) !important;
 }
 .faqs__one .faq__question:hover > h2, .faqs__clicked h2 {
 	color: white;
