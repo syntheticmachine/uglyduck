@@ -210,7 +210,7 @@ header.header__basic nav ul.sub-menu {
 header.header__basic nav ul li.menu-item-has-children:hover > .sub-menu {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(3px);
+  transform: translateY(0px);
 }
 header.header__basic nav ul.sub-menu li {
   display: block;
@@ -220,6 +220,8 @@ header.header__basic nav ul.sub-menu li a {
   padding-left: 1.25rem;
   border-bottom: 1px solid rgba(0,0,0,.1);
 	width: 100%;
+	text-align: left;
+	color: #101010;
 }
 header.header__basic.transparent nav ul.sub-menu li a {
 	color: #353535 !important;
@@ -251,7 +253,7 @@ header.header__basic .social__icons i:hover {
 header.header__basic .cta__btn {
   background: var(--primary);
   color: white;
-  border-radius: 3-px;
+  border-radius: 3px;
   padding: 8px 20px;
   verticle-align: middle;
   font-weight: 600;

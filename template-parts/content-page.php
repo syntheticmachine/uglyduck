@@ -77,7 +77,7 @@ if($backgroundType == 'color') {
 		<?php if( have_rows('faqs') ): ?>
 			<div class="container faqs__one">
 				<div class="row align-items-center">
-					<div class="col-md-8 offset-md-2">
+					<div class="col-lg-8 offset-lg-2">
 						<?php while( have_rows('faqs') ): the_row(); ?>
 
 							<div class="faq__question">
