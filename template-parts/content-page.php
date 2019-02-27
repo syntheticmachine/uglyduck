@@ -117,15 +117,18 @@ jQuery(document).ready(function($) {
   font-size: 1.5rem;
 	margin-bottom: 0;
 	transition: all .3s ease;
+	max-width: 80%;
+	line-height: 1.35;
 }
 .faqs__one .faq__question {
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0,0,0,.1);
   padding: 1.5rem;
 	margin-top: 1.5rem;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
 	transition: all .3s ease;
+	background: white;
 }
 .faqs__one .faq__question:nth-child(1) {
 	margin-top: 0;
@@ -155,7 +158,7 @@ jQuery(document).ready(function($) {
 	transform: translateY(-45%) rotate(135deg);
 }
 .faqs__one .faq__answer {
-	border: 1px solid rgba(0,0,0,.2);
+	border: 1px solid rgba(0,0,0,.1);
 	border-top: none;
 	background: #f9f9f9;
 	padding: 1.5rem;
@@ -166,7 +169,7 @@ jQuery(document).ready(function($) {
   text-align: center;
 }
 section {
-	padding: 6.5rem 0;
+	padding: 3.5rem 0;
 	background-size: cover;
 	background-position: center;
 }
