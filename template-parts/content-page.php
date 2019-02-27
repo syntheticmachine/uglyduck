@@ -119,6 +119,7 @@ jQuery(document).ready(function($) {
 	transition: all .3s ease;
 	max-width: 80%;
 	line-height: 1.35;
+	font-weight: 600;
 }
 .faqs__one .faq__question {
   border: 1px solid rgba(0,0,0,.1);
