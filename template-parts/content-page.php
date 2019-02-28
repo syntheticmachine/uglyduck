@@ -36,7 +36,7 @@ if($backgroundType == 'color') {
 		<?php if( have_rows('fullwidth_content') ): while( have_rows('fullwidth_content') ): the_row(); ?>
 
 			<div class="container">
-				<div class="row align-items-center">
+				<div class="row">
 					<div class="w-100">
 						<div class="w-<?php the_sub_field('content_width'); ?> <?php the_sub_field('content_position'); ?>">
 							<span class="content__block-eyebrow"><?php the_sub_field('eyebrow'); ?></span>
@@ -57,7 +57,7 @@ if($backgroundType == 'color') {
 
 		<?php if( have_rows('multiple_columns') ): ?>
 			<div class="container">
-				<div class="row align-items-center">
+				<div class="row">
 
 					<?php while( have_rows('multiple_columns') ): the_row(); ?>
 
@@ -111,7 +111,7 @@ if($backgroundType == 'color') {
 
 		<?php if( have_rows('faqs') ): ?>
 			<div class="container faqs__one">
-				<div class="row align-items-center">
+				<div class="row">
 					<div class="col-lg-8 offset-lg-2">
 						<?php while( have_rows('faqs') ): the_row(); ?>
 
