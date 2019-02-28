@@ -65,6 +65,8 @@ main img {
 main h1, main h2, main h3, main h4, main h5 {
 	margin-bottom: 1.5rem;
 	font-weight: 700;
+	display: block;
+	width: 100%;
 }
 blockquote {
 	margin-left: 6.5rem;
