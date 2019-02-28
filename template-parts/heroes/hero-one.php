@@ -2,6 +2,7 @@
 global $post;
 if(get_field('hero_override')) { $heroID = get_field('hero_override'); } else { $heroID = get_field('default_hero','options'); }
 $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' );
+$minHeight = get_field('min_height', $heroID);
 ?>
 
 <div class="hero__one d-flex align-items-center">
@@ -16,12 +17,16 @@ $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 560
 					<h1><?php the_field('title'); ?></h1>
 				<?php endif; ?>
 				<?php if(get_field('description')) : ?>
-					<p class="description"><?php the_field('description'); ?></p>
+					<?php echo wpautop(get_field('description')); ?>
 				<?php endif; ?>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+<?php if($minHeight) : ?> .hero__one { min-height: <?php echo $minHeight; ?>; } <?php endif; ?>
+</style>
 
 <script>
 jQuery(document).ready(function($) {

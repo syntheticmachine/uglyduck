@@ -51,6 +51,39 @@ if($backgroundType == 'color') {
 
 		<!-- End Fullwidth Content -->
 
+		<!-- Multiple Columns -->
+
+		<?php $columnAmount = get_sub_field('number_of_columns'); ?>
+
+		<?php if( have_rows('multiple_columns') ): ?>
+			<div class="container">
+				<div class="row align-items-center">
+
+					<?php while( have_rows('multiple_columns') ): the_row(); ?>
+
+						<div class="col-md-<?php echo $columnAmount; ?>">
+							<?php if(get_sub_field('image')) : ?>
+								<img src="<?php echo get_sub_field('image'); ?>" />
+							<?php endif; ?>
+							<?php if(get_sub_field('eyebrow')) : ?>
+								<span class="content__block-eyebrow"><?php the_sub_field('eyebrow'); ?></span>
+							<?php endif; ?>
+							<?php if(get_sub_field('heading')) : ?>
+								<h1><?php the_sub_field('heading'); ?></h1>
+							<?php endif; ?>
+							<?php if(get_sub_field('content')) : ?>
+								<?php echo wpautop(get_sub_field('content')); ?>
+							<?php endif; ?>
+						</div>
+
+					<?php endwhile; ?>
+
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<!-- End Multiple Columns -->
+
 		<!-- Vendor Gallery -->
 
 		<?php if( have_rows('vendor_gallery') ): while( have_rows('vendor_gallery') ): the_row(); ?>
@@ -97,6 +130,18 @@ if($backgroundType == 'color') {
 
 		<!-- End FAQs -->
 
+		<!-- Raw HTML -->
+
+		<?php if( get_sub_field('html_element') ): ?>
+			<div class="container">
+				<div class="row">
+					<?php the_sub_field('html_element'); ?>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<!-- End Raw HTML -->
+
 	</section>
 
  <?php endwhile; endif; ?>
@@ -107,10 +152,19 @@ if($backgroundType == 'color') {
 
 <script>
 jQuery(document).ready(function($) {
+
 	$('.faq__question').click(function() {
 		$(this).toggleClass('faqs__clicked');
 		$(this).next().slideToggle();
 	});
+
+	sr.reveal('main section .container', {
+		duration: 800,
+		origin: 'bottom',
+		distance: '150px',
+		delay: 250
+	});
+
 });
 </script>
 
@@ -163,7 +217,7 @@ jQuery(document).ready(function($) {
 .faqs__one .faq__answer {
 	border: 1px solid rgba(0,0,0,.1);
 	border-top: none;
-	background: #f9f9f9;
+	background: #ffffff;
 	padding: 1.5rem;
 	display: none;
 }

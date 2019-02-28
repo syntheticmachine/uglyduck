@@ -99,8 +99,14 @@ cite::before {
 	background: transparent;
 	color: var(--primary);
 }
-.btn-outline:hover {
+.btn-outline-white {
+	border: 3px solid white;
+	background: transparent;
+	color: white;
+}
+.btn-outline:hover, .btn-outline-white:hover {
 	background: var(--primary);
+	border: 3px solid var(--primary);
 }
 
 /* Navigation Helpers
@@ -493,7 +499,7 @@ header.header__two .social__icons {
 	font-weight: 600;
 	font-size: 3rem;
 }
-.hero__one .contents .description {
+.hero__one .contents p {
   color: rgba(255,255,255,.8);
   font-size: 1.25rem;
   line-height: 1.5;
