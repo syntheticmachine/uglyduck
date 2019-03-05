@@ -81,7 +81,7 @@ if($backgroundType == 'color') {
 								<span class="content__block-eyebrow"><?php the_sub_field('eyebrow'); ?></span>
 							<?php endif; ?>
 							<?php if(get_sub_field('heading')) : ?>
-								<h1><?php the_sub_field('heading'); ?></h1>
+								<h3><?php the_sub_field('heading'); ?></h3>
 							<?php endif; ?>
 							<?php if(get_sub_field('content')) : ?>
 								<?php echo wpautop(get_sub_field('content')); ?>
