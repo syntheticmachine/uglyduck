@@ -29,25 +29,37 @@ if($backgroundType == 'color') {
 ?>
 
 
-	<section style="<?php echo $background; ?>;">
+	<section style="<?php echo $background; ?>;" <?php if( get_sub_field('sidebar_content') ) : ?>class="no-padding"<?php endif; ?>>
 
 		<!-- Fullwidth Content -->
 
-		<?php if( have_rows('fullwidth_content') ): while( have_rows('fullwidth_content') ): the_row(); ?>
+		<?php if( have_rows('fullwidth_content') ): ?>
 
 			<div class="container">
 				<div class="row">
 					<div class="w-100">
+
+						<?php while( have_rows('fullwidth_content') ): the_row(); ?>
+
 						<div class="w-<?php the_sub_field('content_width'); ?> <?php the_sub_field('content_position'); ?>">
-							<span class="content__block-eyebrow"><?php the_sub_field('eyebrow'); ?></span>
-							<h1><?php the_sub_field('title'); ?></h1>
-							<?php echo wpautop(get_sub_field('content')); ?>
+							<?php if(get_sub_field('eyebrow')) : ?>
+								<span class="content__block-eyebrow"><?php the_sub_field('eyebrow'); ?></span>
+							<?php endif; ?>
+							<?php if(get_sub_field('title')) : ?>
+								<h1><?php the_sub_field('title'); ?></h1>
+							<?php endif; ?>
+							<?php if(get_sub_field('content')) : ?>
+								<?php echo wpautop(get_sub_field('content')); ?>
+							<?php endif; ?>
 						</div>
+
+						<?php endwhile; ?>
+
 					</div>
 				</div>
 			</div>
 
-		<?php endwhile; endif; ?>
+		<?php endif; ?>
 
 		<!-- End Fullwidth Content -->
 
@@ -61,7 +73,7 @@ if($backgroundType == 'color') {
 
 					<?php while( have_rows('multiple_columns') ): the_row(); ?>
 
-						<div class="col-md-<?php echo $columnAmount; ?>">
+						<div class="col-md-<?php echo $columnAmount; ?> multiple__columns">
 							<?php if(get_sub_field('image')) : ?>
 								<img src="<?php echo get_sub_field('image'); ?>" />
 							<?php endif; ?>
@@ -86,24 +98,30 @@ if($backgroundType == 'color') {
 
 		<!-- Vendor Gallery -->
 
-		<?php if( have_rows('vendor_gallery') ): while( have_rows('vendor_gallery') ): the_row(); ?>
+		<?php if( get_sub_field('vendor_logos') ): ?>
 
 			<div class="container">
 				<div class="row">
-					<?php $vendorLogos = get_sub_field('vendor_logos');
-					if( $vendorLogos ): ?>
-					<?php foreach( $vendorLogos as $vendorLogo ): ?>
-						<div class="col-lg-3 col-md-4 col-6">
-							<div class="vendor__grid">
-								<img src="<?php echo $vendorLogo['url']; ?>" alt="<?php echo $vendorLogo['alt']; ?>" />
+
+					<?php while( have_rows('vendor_gallery') ): the_row(); ?>
+
+						<?php $vendorLogos = get_sub_field('vendor_logos');
+						if( $vendorLogos ): ?>
+						<?php foreach( $vendorLogos as $vendorLogo ): ?>
+							<div class="col-lg-3 col-md-4 col-6">
+								<div class="vendor__grid">
+									<img src="<?php echo $vendorLogo['url']; ?>" alt="<?php echo $vendorLogo['alt']; ?>" />
+								</div>
 							</div>
-						</div>
-					<?php endforeach; ?>
-					<?php endif; ?>
+						<?php endforeach; ?>
+						<?php endif; ?>
+
+					<?php endwhile; ?>
+
 				</div>
 			</div>
 
-		<?php endwhile; endif; ?>
+		<?php endif; ?>
 
 		<!-- End Vendor Gallery -->
 
@@ -141,6 +159,23 @@ if($backgroundType == 'color') {
 		<?php endif; ?>
 
 		<!-- End Raw HTML -->
+
+		<!-- Sidebar Section -->
+
+		<?php if( get_sub_field('sidebar_content') ): ?>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 sidebar">
+						<?php dynamic_sidebar( 'sidebar' ); ?>
+					</div>
+					<div class="col-md-9">
+						<?php the_sub_field('sidebar_content'); ?>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<!-- End Sidebar Section -->
 
 	</section>
 
@@ -226,9 +261,40 @@ jQuery(document).ready(function($) {
   text-align: center;
 }
 section {
-	padding: 3.5rem 0;
+	padding: 5rem 0;
 	background-size: cover;
 	background-position: center;
+}
+section.no-padding {
+	padding: 0rem;
+}
+.sidebar {
+	padding: 5rem 0;
+	border-right: 1px solid rgba(0,0,0,.1);
+}
+.sidebar li {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.sidebar li::before {
+	display: none;
+}
+.sidebar li a {
+	display: block;
+	font-size: .9rem;
+	font-weight: 600;
+	color: #333;
+	padding: 0.5rem 0;
+}
+.sidebar .widget__title {
+	color: var(--primary);
+}
+.sidebar img {
+  padding: .75rem;
+  padding-left: 0;
+}
+.no-padding .col-md-9 {
+	padding: 5rem 0;
+	padding-left: 3.5rem;
 }
 main {
 	padding: 0 !important;
@@ -269,5 +335,8 @@ main {
 }
 .content__block-content p {
 	max-width: 85%;
+}
+.multiple__columns {
+	padding: 0 2rem;
 }
 </style>

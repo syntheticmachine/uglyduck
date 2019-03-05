@@ -49,8 +49,8 @@ main ul li::before {
 	margin-right: .65rem;
 }
 main p {
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.55;
   color: var(--gray-dark);
 	display: block;
 	width: 100%;

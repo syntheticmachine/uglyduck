@@ -163,6 +163,7 @@ create_widget( 'Footer Section Three', 'footer_three', 'Displays in the third se
 create_widget( 'Footer Section Four', 'footer_four', 'Displays in the fourth section of the footer' );
 create_widget( 'Footer Section Five', 'footer_five', 'Displays in the fifth section of the footer' );
 create_widget( 'Footer Section Six', 'footer_six', 'Displays in the sixth section of the footer' );
+create_widget( 'Sidebar', 'sidebar', 'Displays in sidebar of internal pages' );
 
 // Enable Shortcodes In Widgets
 add_filter( 'widget_text', 'do_shortcode' );
@@ -227,7 +228,7 @@ add_action( 'wp_enqueue_scripts', 'udm_enqueue' );
 
 require_once(dirname(__FILE__) . '/post-types.php'); // Post Types
 
-require_once(dirname(__FILE__) . '/field-groups.php'); // Field Groups
+// require_once(dirname(__FILE__) . '/field-groups.php'); // Field Groups
 
 if(!get_field('realtor_widgets', 'options')) :
 	function remove_realtor_widgets() {
