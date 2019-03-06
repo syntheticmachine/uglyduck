@@ -59,8 +59,6 @@ if($backgroundType == 'color') {
 				</div>
 			</div>
 
-		<?php endif; ?>
-
 		<!-- End Fullwidth Content -->
 
 		<!-- Multiple Columns -->

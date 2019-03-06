@@ -316,7 +316,7 @@ header.header__two nav ul li {
 }
 header.header__two nav ul > li a {
   color: #101010;
-  padding: 1.15rem 1rem;
+  padding: 1.15rem 1.365rem;
   font-weight: 500;
   font-size: 15px;
   transition: all .3s ease;
@@ -883,10 +883,11 @@ footer.footer__one .footer__block {
   margin-bottom: 1.75rem;
 }
 .single__one-content p {
-  color: #222;
+  color: #4c4c4c;
   text-rendering: optimizeLegibility;
   font-family: 'Source Serif Pro', serif;
   line-height: 1.65;
+	font-size: 1.3rem;
   margin-bottom: 2.5rem;
 }
 .single__one-content a {

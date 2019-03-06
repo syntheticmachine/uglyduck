@@ -234,7 +234,7 @@ add_action( 'wp_enqueue_scripts', 'udm_enqueue' );
 
 require_once(dirname(__FILE__) . '/post-types.php'); // Post Types
 
-require_once(dirname(__FILE__) . '/field-groups.php'); // Field Groups
+// require_once(dirname(__FILE__) . '/field-groups.php'); // Field Groups
 
 if(!get_field('realtor_widgets', 'options')) :
 	function remove_realtor_widgets() {
