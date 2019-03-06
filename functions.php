@@ -180,6 +180,12 @@ function php_execute($html){
 }
 add_filter('widget_text','php_execute',100);
 
+// Remove Comments
+function remove_comments() {
+	remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'remove_comments' );
+
 //======================================================================
 // CREATE SHORTCODES FROM ALL COMPANY FIELDS
 //======================================================================
