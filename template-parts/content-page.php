@@ -58,6 +58,7 @@ if($backgroundType == 'color') {
 					</div>
 				</div>
 			</div>
+		<?php endif; ?>
 
 		<!-- End Fullwidth Content -->
 
