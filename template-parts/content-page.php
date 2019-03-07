@@ -97,7 +97,7 @@ if($backgroundType == 'color') {
 
 		<!-- Vendor Gallery -->
 
-		<?php if( get_sub_field('vendor_logos') ): ?>
+		<?php if( have_rows('vendor_gallery') ): ?>
 
 			<div class="container">
 				<div class="row">
