@@ -6,11 +6,11 @@ $iconColor = get_field('phone_number_icon_color', $headerID);
 <div class="top__widget header__phone text-<?php echo get_field('header_phone_alignment', $headerID); ?>">
 	<div class="row">
 		<?php if(get_field('phone_number_icon', $headerID)) : ?>
-			<div class="col-md-auto">
+			<div class="col-auto">
 				<i class="ion-android-call"></i>
 			</div>
 		<?php endif; ?>
-		<div class="col-md-auto">
+		<div class="col-auto">
 			<?php if(get_field('phone_number_text', $headerID)) : ?>
 				<small class="header__phone-top"><?php the_field('phone_number_text', $headerID); ?></small>
 			<?php endif; ?>
