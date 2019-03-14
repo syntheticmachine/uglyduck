@@ -303,7 +303,7 @@ main {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	position: relative;
+	position: relative; 
 	width: 100%;
 }
 .vendor__grid:before{

@@ -1116,4 +1116,8 @@ footer.footer__one .footer__block {
 	.footer__cta-one h2 {
 		font-size: 2.15rem;
 	}
+	/* Bootstrap Overrides */
+	.w-75, .w-50, .w-25 {
+		width: 100% !important;
+	}
 }
