@@ -229,6 +229,77 @@ function udm_enqueue() {
 add_action( 'wp_enqueue_scripts', 'udm_enqueue' );
 
 //======================================================================
+// VISUAL COMPOSER TEST
+//======================================================================
+
+vc_map( array(
+   "name" => __("Content Box"),
+   "base" => "content_box",
+   "category" => __('UDM'),
+	 "class" => 'contentbox',
+	 "show_settings_on_create" => false,
+	 "params" => array(
+		 array(
+ 			 "type" => "textfield",
+ 			 "class" => "",
+ 			 "heading" => __("Title"),
+ 			 "param_name" => "content_box_title",
+ 			 "value" => __(""),
+ 		 ),
+		 array(
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => __("Description"),
+				"param_name" => "content",
+				"value" => __(""),
+			),
+		 array(
+				 "type" => "colorpicker",
+				 "class" => "",
+				 "heading" => __( "Background Color" ),
+				 "param_name" => "content_box_color",
+				 "value" => __(""),
+		 ),
+		 array(
+				"type" => "vc_link",
+				"class" => "",
+				"heading" => __("Link"),
+				"param_name" => "content_box_link",
+				"value" => __(""),
+		 ),
+		 array(
+				"type" => "colorpicker",
+				"class" => "",
+				"heading" => __("Button Background Color"),
+				"param_name" => "content_box_button_color",
+				"value" => __(""),
+		 ),
+		 array(
+				 "type" => "textfield",
+				 "class" => "",
+				 "heading" => __("Button Text"),
+				 "param_name" => "content_box_button_title",
+				 "value" => __(""),
+			 ),
+   )
+) );
+
+function content_box( $atts, $content = null ) {
+ extract( shortcode_atts( array(
+  'content_box_title' => '',
+	'content_box_image' => '',
+	'content_box_color' => '',
+	'content_box_button_color' => '',
+	'content_box_button_title' => '',
+	'content_box_link' => '',
+ ), $atts ) );
+	 $content = wpb_js_remove_wpautop($content, true);
+	 return "<div class='padded-vc' style='background-color: {$content_box_color}'><h3>{$content_box_title}</h3>{$content}<a style='border-radius: 2em; background: {$content_box_button_color} !important;' href='{$content_box_link}' class='btn'>{$content_box_button_title}</a></div>";
+}
+
+add_shortcode( 'content_box', 'content_box' );
+
+//======================================================================
 // LOAD FILES
 //======================================================================
 

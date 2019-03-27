@@ -5,6 +5,46 @@ Author URI: https://uglyduckmarketing.com/
 Version: 1.0.4
 */
 
+/* Test VC Styles
+------------------------------------- */
+
+.padded-lg .vc_column-inner {
+	padding-top: 80px !important;
+	padding-bottom: 65px !important;
+	padding-right: 95px !important;
+	padding-left: 95px !important;
+}
+.padded-sm .vc_column-inner, .padded-vc {
+	padding-top: 50px !important;
+	padding-bottom: 28px !important;
+	padding-right: 50px !important;
+	padding-left: 32px !important;
+}
+@media(max-width: 767px) {
+	.padded-lg .vc_column-inner {
+		padding-top: 60px !important;
+	  padding-right: 32px !important;
+	  padding-bottom: 50px !important;
+	  padding-left: 32px !important;
+	}
+	.padded-sm .vc_column-inner {
+		padding-top: 50px !important;
+		padding-bottom: 22px !important;
+		padding-right: 35px !important;
+		padding-left: 35px !important;
+	}
+	.vc_btn3-container.vc_btn3-inline {
+		display: block !important;
+	}
+	.vc_btn3.vc_btn3-size-md {
+		display: block !important;
+		width: 100%;
+	}
+	.vc_rtl-columns-reverse {
+		flex-direction:column-reverse !important;
+	}
+}
+
 /* Base Styles
 ------------------------------------- */
 body, html {
