@@ -3373,6 +3373,23 @@ acf_add_local_field_group(array(
 	'title' => 'Left/Right Boxes',
 	'fields' => array(
 		array(
+			'key' => 'field_5cad236232a69',
+			'label' => '',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '<img src="https://avelm.com/base/wp-content/uploads/2019/04/left-right-icon.png" style="max-height: 50px; height: auto;" />',
+			'new_lines' => 'wpautop',
+			'esc_html' => 0,
+		),
+		array(
 			'key' => 'field_5cad18a31d7ad',
 			'label' => 'Eyebrow',
 			'name' => 'lr_eyebrow',
@@ -3536,6 +3553,23 @@ acf_add_local_field_group(array(
 	'key' => 'group_5cad16e2d9851',
 	'title' => 'Gallery Section',
 	'fields' => array(
+		array(
+			'key' => 'field_5cad2623cf53a',
+			'label' => '',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '<img src="https://avelm.com/base/wp-content/uploads/2019/04/gallery-icon.png" style="max-height: 50px; height: auto;" />',
+			'new_lines' => 'wpautop',
+			'esc_html' => 0,
+		),
 		array(
 			'key' => 'field_5cad16f0c3b03',
 			'label' => 'Gallery',
@@ -3827,4 +3861,3 @@ acf_add_local_field_group(array(
 ));
 
 endif;
-?>
