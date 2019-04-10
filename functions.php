@@ -168,7 +168,8 @@ create_widget( 'Footer Section Three', 'footer_three', 'Displays in the third se
 create_widget( 'Footer Section Four', 'footer_four', 'Displays in the fourth section of the footer' );
 create_widget( 'Footer Section Five', 'footer_five', 'Displays in the fifth section of the footer' );
 create_widget( 'Footer Section Six', 'footer_six', 'Displays in the sixth section of the footer' );
-create_widget( 'Sidebar', 'sidebar', 'Displays in sidebar of internal pages' );
+create_widget( 'Right Sidebar', 'right-sidebar', 'Displays in the right sidebar of internal pages' );
+create_widget( 'Left Sidebar', 'left-sidebar', 'Displays in the left sidebar of internal pages' );
 
 // Enable Shortcodes In Widgets
 add_filter( 'widget_text', 'do_shortcode' );
@@ -223,13 +224,16 @@ add_shortcode( 'email_address', 'email_address' );
 function udm_enqueue() {
 
 	// CSS
+	wp_enqueue_style( 'proxima-nova','//use.typekit.net/npk3etv.css');
+	wp_enqueue_style( 'slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
 	wp_enqueue_style( 'bootstrap-css','//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"' );
 	wp_enqueue_style( 'icons-css','//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"' );
 	wp_enqueue_style( 'base-css', get_stylesheet_uri() );
 
 	// JAVASCRIPT
 	wp_enqueue_script( 'uglyduck-js', get_template_directory_uri() . '/js/app.js', array('jquery'), false, true );
-	wp_enqueue_script( 'uglyduck-scrollreveal', 'https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js', array('jquery'), false, true );
+	wp_enqueue_script( 'uglyduck-scrollreveal', '//cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js', array('jquery'), false, true );
+	wp_enqueue_script( 'uglyduck-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'udm_enqueue' );
 

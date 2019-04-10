@@ -3173,6 +3173,23 @@ acf_add_local_field_group(array(
 	'title' => 'Intro Section',
 	'fields' => array(
 		array(
+			'key' => 'field_5cae54202b4c9',
+			'label' => '',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '<i>This section will change formatting if the \'Right Sidebar\' or \'Left Sidebar\' widgets are active.</i>',
+			'new_lines' => 'wpautop',
+			'esc_html' => 0,
+		),
+		array(
 			'key' => 'field_5cad15d5bf74a',
 			'label' => 'Eyebrow',
 			'name' => 'intro_eyebrow',
@@ -3212,8 +3229,8 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5cad15debf74b',
-			'label' => 'Cotnent',
-			'name' => 'intro_cotnent',
+			'label' => 'Content',
+			'name' => 'intro_content',
 			'type' => 'wysiwyg',
 			'instructions' => '',
 			'required' => 0,

@@ -5,59 +5,24 @@ Author URI: https://uglyduckmarketing.com/
 Version: 1.0.4
 */
 
-/* Test VC Styles
-------------------------------------- */
-
-.padded-lg .vc_column-inner {
-	padding-top: 80px !important;
-	padding-bottom: 65px !important;
-	padding-right: 95px !important;
-	padding-left: 95px !important;
-}
-.padded-sm .vc_column-inner, .padded-vc {
-	padding-top: 50px !important;
-	padding-bottom: 28px !important;
-	padding-right: 50px !important;
-	padding-left: 32px !important;
-}
-@media(max-width: 767px) {
-	.padded-lg .vc_column-inner {
-		padding-top: 60px !important;
-	  padding-right: 32px !important;
-	  padding-bottom: 50px !important;
-	  padding-left: 32px !important;
-	}
-	.padded-sm .vc_column-inner {
-		padding-top: 50px !important;
-		padding-bottom: 22px !important;
-		padding-right: 35px !important;
-		padding-left: 35px !important;
-	}
-	.vc_btn3-container.vc_btn3-inline {
-		display: block !important;
-	}
-	.vc_btn3.vc_btn3-size-md {
-		display: block !important;
-		width: 100%;
-	}
-	.vc_rtl-columns-reverse {
-		flex-direction:column-reverse !important;
-	}
-}
-
 /* Base Styles
 ------------------------------------- */
-@import url('https://rsms.me/inter/inter.css');
-html, body { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
+html, body {
+	font-family: proxima-nova, sans-serif;
 }
 body {
 	font-size: 1rem;
 	text-rendering: optimizeLegibility;
 }
 .container {
-	max-width: 85%;
+	width: 85%;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+	display: block;
+	width: 100%;
 }
 a {
 	text-decoration: none;
@@ -65,6 +30,9 @@ a {
 }
 main {
 	padding: 3.5rem 0;
+}
+main.layout__one {
+	padding: 0;
 }
 main ul {
 	padding-left: 0;
@@ -90,7 +58,7 @@ main ul li::before {
 	margin-right: .65rem;
 }
 main p {
-  font-size: 1.1rem;
+  font-size: 1.195rem;
   line-height: 1.55;
   color: var(--gray-dark);
 	display: block;
@@ -102,12 +70,6 @@ main strong {
 main img {
 	max-width: 100%;
 	height: auto;
-}
-main h1, main h2, main h3, main h4, main h5 {
-	margin-bottom: 1.5rem;
-	font-weight: 700;
-	display: block;
-	width: 100%;
 }
 blockquote {
 	margin-left: 6.5rem;
@@ -539,7 +501,6 @@ header.header__two .social__icons {
   color: white;
   display: block;
   padding-bottom: 1.25rem;
-	font-weight: 600;
 	font-size: 3rem;
 }
 .hero__one .contents p {
@@ -680,7 +641,6 @@ footer.footer__one .footer__block {
 }
 .footer__cta-one h2 {
 	display: block;
-	font-weight: 600;
 	color: white;
 	font-size: 2.45rem;
 }
@@ -1106,6 +1066,140 @@ footer.footer__one .footer__block {
   top: 1px;
   left: 0;
   width: 63px;
+}
+
+/* Layout One - Basics
+------------------------------------- */
+.lr__section {
+	background: #f9f9f9;
+}
+.layout__one-section {
+	padding: 6rem 0;
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+.layout__one-section-eyebrow {
+  color: var(--primary);
+  display: block;
+	width: 100%;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.layout__one-section-heading {
+  font-size: 2.5rem;
+}
+/* Layout One - FAQs
+------------------------------------- */
+.faq__section .layout__one-section-heading {
+	margin-bottom: 3.5rem;
+}
+.faq__section-container {
+  display: block;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+	border: 1px solid rgba(0,0,0,.1);
+	margin-bottom: 1.25rem;
+	box-shadow: 0 1px 2px rgba(0,0,0,.08);
+	transition: all .3s ease;
+	position: relative;
+}
+.faq__section-container:hover {
+  box-shadow: 0 1px 10px rgba(108,125,142,.3);
+	cursor: pointer;
+	transform: translateY(-5px);
+}
+.faq__section-container i {
+  position: absolute;
+  right: 40px;
+  top: 33px;
+  transform: rotate(0deg);
+  font-size: 1.5rem;
+  color: var(--primary);
+  line-height: 1;
+	transition: all .3s ease;
+}
+.faq__section-container.toggled i {
+  transform: rotate(44deg);
+}
+.faq__section-question h3 {
+  margin-bottom: 0px;
+  font-size: 1.45rem;
+}
+.faq__section-answer {
+  display: none;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  max-width: 90%;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+/* Layout One - Slider
+------------------------------------- */
+.variable-width-slider img {
+	max-height: 450px !important;
+	min-height: 450px !important;
+}
+.slick-prev {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  top: 48%;
+  left: 20px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100pc;
+  padding-right: 10px;
+  background: var(--primary);
+  border: none;
+  cursor: pointer !important;
+  transition: all .3s ease;
+  color: white;
+  outline: none !important;
+  padding-top: 4px;
+}
+.slick-next {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  top: 48%;
+  right: 20px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 100pc;
+	padding-left: 9px;
+	background: var(--primary);
+	border: none;
+	cursor: pointer !important;
+	transition: all .3s ease;
+	color: white;
+	outline: none !important;
+	padding-top: 5px;
+}
+.slick-next:hover, .slick-prev:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 0 30px 0 rgba(0,0,0,.25);
+	background: #000;
+	color: var(--primary);
+}
+/* Layout One - Left/Right
+------------------------------------- */
+.lr__row {
+	margin: 3.75rem 0;
+}
+.lr__section-image {
+	padding: 0 1.65rem;
+}
+.zigzag:nth-child(odd) .lr__section-image {
+	order: -1;
+}
+/* Layout One - Content Block
+------------------------------------- */
+.content-block__section {
+	background: #141825;
+}
+.content-block__section h2, .content-block__section p {
+	color: white;
 }
 
 /* Media Queries
