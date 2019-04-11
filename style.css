@@ -7,16 +7,13 @@ Version: 1.0.4
 
 /* Base Styles
 ------------------------------------- */
+
 html, body {
 	font-family: proxima-nova, sans-serif;
 }
 body {
 	font-size: 1rem;
 	text-rendering: optimizeLegibility;
-}
-.container {
-	width: 85%;
-	max-width: 1000px;
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 1.5rem;
@@ -1182,6 +1179,11 @@ footer.footer__one .footer__block {
 	background: #000;
 	color: var(--primary);
 }
+@media(max-width: 992px) {
+	.slick-next, .slick-prev {
+		display: none !important;
+	}
+}
 /* Layout One - Left/Right
 ------------------------------------- */
 .lr__row {
@@ -1204,7 +1206,21 @@ footer.footer__one .footer__block {
 
 /* Media Queries
 ------------------------------------- */
-
+@media(min-width: 1450px) {
+	header.header__basic nav ul {
+		display: block;
+	}
+	header.header__basic nav ul li {
+		padding: 0 1.5rem;
+	}
+	.layout__one-section {
+	  padding: 9rem 0;
+	  border-top: 1px solid rgba(0,0,0,.1);
+	}
+	.testimonial__section {
+	  padding: 4rem 0 !important;
+	}
+}
 @media(max-width: 992px) {
 	body {
   	font-size: 1.15rem;
@@ -1212,8 +1228,63 @@ footer.footer__one .footer__block {
 	main {
 	  padding: 3.5rem 0;
 	}
-	footer .container {
-		padding: 0;
+	.container, .hero__one .contents {
+		max-width: 90.5%;
+		margin: 0 auto;
+	}
+
+	.intro__sidebar {
+		order: 2;
+	}
+
+	.layout__one-section {
+		padding: 4rem 0;
+	}
+	.layout__one-section-heading {
+	  font-size: 2.15rem;
+	}
+	.p-0 {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+
+	.lr__row {
+	  margin: 0;
+	  margin-top: 2rem;
+	}
+	.lr__section-image {
+	  padding: 15px;
+	  order: -1;
+	  margin-bottom: 2rem;
+	}
+
+
+	.testimonial__section .container {
+	  max-width: 100%;
+	}
+	.testimonial__container {
+		padding: 0 !important;
+	}
+	.testimonial__container-inner {
+		padding: 2rem;
+	}
+
+
+	.faq__section-container {
+		padding: 1.25rem;
+	}
+	.faq__section-question h3 {
+		font-size: 1.25rem;
+		max-width: 90%;
+	}
+	.faq__section-container i {
+	  right: 25px;
+	  top: 20px;
+	}
+
+
+	.hero__one .contents {
+		margin-top: 2rem;
 	}
 	.hero__basic {
 		padding: 8px 0;
@@ -1224,9 +1295,6 @@ footer.footer__one .footer__block {
 	.hero__one {
 	  padding: 4rem 0;
 	  min-height: auto;
-	}
-	.hero__one .contents {
-		max-width: 100%;
 	}
 	.hero__one .contents h1 {
 	  font-size: 2.25rem;

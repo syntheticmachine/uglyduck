@@ -166,7 +166,7 @@
 <style>
 .testimonial__section {
 	background: #F4F8FB;
-	padding: 2rem !important;
+	padding: 2rem 0 !important;
 }
 .testimonial__container {
 	padding: 1rem;

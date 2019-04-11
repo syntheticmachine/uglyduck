@@ -1,7 +1,7 @@
 <section class="lr__section layout__one-section">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 p-0 text-center">
+			<div class="col-12 p-0">
 				<?php if(get_field('lr_eyebrow')) : ?>
 					<span class="layout__one-section-eyebrow"><?php the_field('lr_eyebrow'); ?></span>
 				<?php endif; ?>

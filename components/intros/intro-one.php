@@ -3,7 +3,7 @@
 		<div class="row">
 
 			<?php if(is_active_sidebar( 'left-sidebar' )) : ?>
-				<div class="col-md-4">
+				<div class="col-md-4 intro__sidebar">
 					<?php dynamic_sidebar( 'left-sidebar' ); ?>
 				</div>
 			<?php endif; ?>
@@ -30,7 +30,7 @@
 		</div>
 
 		<?php if(is_active_sidebar( 'right-sidebar' )) : ?>
-			<div class="col-md-4">
+			<div class="col-md-4 intro__sidebar">
 				<?php dynamic_sidebar( 'right-sidebar' ); ?>
 			</div>
 		<?php endif; ?>
