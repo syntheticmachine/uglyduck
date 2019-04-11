@@ -29,7 +29,7 @@
 
 	<!-- Content Block Section -->
 
-	<?php if(have_rows('content_section')) : ?>
+	<?php if(get_field('block_content')) : ?>
 		<?php get_template_part( 'components/content-block/block', 'one' ); ?>
 	<?php endif; ?>
 
