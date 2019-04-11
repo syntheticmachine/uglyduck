@@ -198,6 +198,7 @@
 .testimonial__text {
 	font-size: 1.05rem;
 	margin-bottom: 1.5rem;
+	min-height: 125px;
 }
 .readmore::after {
 	content: 'Read Full Review';
