@@ -1188,6 +1188,7 @@ footer.footer__one .footer__block {
 ------------------------------------- */
 .lr__row {
 	margin: 3.75rem 0;
+	min-width: 100%;
 }
 .lr__section-image {
 	padding: 0 1.65rem;

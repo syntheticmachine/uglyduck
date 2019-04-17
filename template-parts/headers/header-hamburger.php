@@ -184,8 +184,9 @@ body.noverflow {
 	overflow: hidden;
 }
 
-
-
+header.header__basic .logo img {
+	max-height: 35px !important;
+}
 </style>
 
 <script>
