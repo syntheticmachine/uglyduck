@@ -3149,6 +3149,25 @@ acf_add_local_field_group(array(
 			'media_upload' => 0,
 			'delay' => 0,
 		),
+		array(
+			'key' => 'field_5cb78dbd52505',
+			'label' => 'Job Title',
+			'name' => 'job_title',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
 	),
 	'location' => array(
 		array(

@@ -56,7 +56,7 @@
 					<div class="testimonial__container">
 						<div class="testimonial__container-inner">
 							<div class="container">
-								<div class="row">
+								<div class="row align-items-center">
 									<div class="col-12">
 										<i class="ion-quote"></i>
 										<div class="testimonial__text">
@@ -72,6 +72,9 @@
 									<?php endif; ?>
 									<div class="col">
 										<h4><?php the_title(); ?></h4>
+										<?php if(get_field('job_title')) : ?>
+											<span class="job-title"><?php the_field('job_title'); ?></span>
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>
@@ -164,6 +167,14 @@
 </script>
 
 <style>
+.job-title {
+  color: #888;
+  font-weight: 500;
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  font-size: 14px;
+}
 .testimonial__section {
 	background: #F4F8FB;
 	padding: 2rem 0 !important;
@@ -180,13 +191,13 @@
 }
 .testimonial__container h4 {
 	font-size: 1.1rem;
-	transform: translateY(8px);
 }
 .testimonial__container-inner {
 	border: 1px solid rgba(0,0,0,.1);
 	background: white;
+	padding: 1.5rem;
 	padding-top: 2rem;
-	padding-bottom: 1.5rem;
+	padding-bottom: 2rem;
 }
 .testimonial__container-image {
 	width: 40px;
