@@ -197,7 +197,6 @@ jQuery(document).ready(function($) {
 		$('.header__hamburger-menu').toggleClass('toggled');
 	});
 	$('.header__hamburger-menu ul .menu-item-has-children').click(function(e) {
-		e.preventDefault();
 		$(this).find('.sub-menu').slideToggle();
 		$(this).children('a').toggleClass('primary-color');
 	});
