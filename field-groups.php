@@ -1181,6 +1181,7 @@ acf_add_local_field_group(array(
 			'choices' => array(
 				'basic' => 'Basic Header',
 				'stacked' => 'Stacked Header',
+				'hamburger' => 'Hamburger Menu',
 			),
 			'default_value' => array(
 			),
