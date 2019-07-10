@@ -44,6 +44,6 @@ if($navLocation) {$nav = 'right';} else { $nav = 'left';}
 <?php if($submenuLinkHover) : ?> header.header__four .sub-menu li a:hover { color: <?php echo $submenuLinkHover; ?> !important; } <?php endif; ?>
 <?php if(in_array("button", $headerWidgets)) : ?>
 	header.header__four .topbar { margin-bottom: 0 !important; }
-	header.header__four .logo img { transform: translateY(-7px) !important; }
+	header.header__four .logo img { transform: translateY(-5px) !important; }
 <?php endif; ?>
 </style>
