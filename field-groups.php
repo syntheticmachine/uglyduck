@@ -1182,6 +1182,7 @@ acf_add_local_field_group(array(
 				'basic' => 'Basic Header',
 				'stacked' => 'Stacked Header',
 				'hamburger' => 'Hamburger Menu',
+				'four' => 'Style Four (Stacked)',
 			),
 			'default_value' => array(
 			),
@@ -2174,6 +2175,8 @@ acf_add_local_field_group(array(
 			'max_height' => '',
 			'max_size' => '',
 			'mime_types' => '',
+			'return_format' => 'array',
+			'preview_size' => 'medium',
 		),
 		array(
 			'key' => 'field_5c52156132fd8',
@@ -3631,6 +3634,8 @@ acf_add_local_field_group(array(
 			'max_height' => '',
 			'max_size' => '',
 			'mime_types' => '',
+			'return_format' => 'array',
+			'preview_size' => 'medium',
 		),
 	),
 	'location' => array(
