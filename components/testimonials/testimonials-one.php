@@ -21,6 +21,13 @@
 											<img src="<?php the_field('user_photo'); ?>" />
 										</div>
 									</div>
+								<?php else : ?>
+									<div class="col-auto">
+										<div class="testimonial__container-image">
+											<?php $smallName = get_the_title(); ?>
+											<span><?php echo $smallName[0]; ?></span>
+										</div>
+									</div>
 								<?php endif; ?>
 								<div class="col">
 									<h4><?php the_title(); ?></h4>
@@ -110,22 +117,38 @@
 	padding-bottom: 2rem;
 }
 .testimonial__section-one .testimonial__container-image {
-	width: 40px;
-	height: 40px;
-	border-radius: 100pc;
-	position: relative;
-	overflow: hidden;
-	border: 2px solid rgba(0,0,0,.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 100pc;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #e2e2e2;
 }
 .testimonial__section-one .testimonial__text {
 	font-size: 1.05rem;
 	margin-bottom: 1.5rem;
 	min-height: 125px;
 }
+.testimonial__section-one .slick-slide img {
+  display: block;
+  width: 38px;
+}
 .testimonial__section-one .readmore::after {
 	content: 'Read Full Review';
 	font-weight: 500;
 	color: var(--primary);
+}
+.testimonial__container-image {
+	background: var(--primary);
+}
+.testimonial__container-image span {
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  padding-left: 12px;
+  display: inline-block;
+  font-size: 21px;
+  padding-top: 3px;
 }
 .testimonial__section-one .testimonial__section .slick-next {
 	right: -85px;
